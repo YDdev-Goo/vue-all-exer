@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { eventBus } from "../../main";
+import { eventBus } from "../main";
 export default {
   props: ["name", "address", "phone", "hasDog"],
   data() {

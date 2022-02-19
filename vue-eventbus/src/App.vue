@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import User from "./components/user/User.vue";
+import User from "./components/User.vue";
 export default {
   name: "App",
   components: {

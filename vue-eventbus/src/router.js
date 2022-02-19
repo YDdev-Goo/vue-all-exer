@@ -8,8 +8,6 @@ const About = () => {
   return import(/* webpackChunkName: "about" */ "./views/About.vue");
 };
 
-const Users = () => import(/* webpackChunkName: "about" */ "./views/Users.vue");
-
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
@@ -23,11 +21,6 @@ export default new Router({
       path: "/about",
       name: "about",
       component: About,
-    },
-    {
-      path: "/users",
-      name: "users",
-      component: Users,
     },
   ],
 });
