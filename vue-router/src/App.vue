@@ -40,6 +40,14 @@
             <v-list-tile-title>Users</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile router :to="{ name: 'users2'}" exact>
+          <v-list-tile-action>
+            <i class="fas fa-user"></i>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Users2</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="indigo" dark fixed app>

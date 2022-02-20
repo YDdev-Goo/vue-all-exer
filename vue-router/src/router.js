@@ -7,8 +7,10 @@ Vue.use(Router);
 const About = () => {
   return import(/* webpackChunkName: "about" */ "./views/About.vue");
 };
-
-const Users = () => import(/* webpackChunkName: "about" */ "./views/Users.vue");
+const Users = () => import(/* webpackChunkName: "users" */ "./views/Users.vue");
+const Users2 = () => import(/* webpackChunkName: "users2" */ "./views/Users2.vue");
+const Users2Detail = () => import(/* webpackChunkName: "users2-detail" */ "./views/Users2Detail.vue");
+const Users2Edit = () => import(/* webpackChunkName: "users2-edit" */ "./views/Users2Edit.vue");
 
 export default new Router({
   mode: "history",
@@ -29,5 +31,22 @@ export default new Router({
       name: "users",
       component: Users,
     },
+    {
+      path: "/users2",
+      name: "users2",
+      component: Users2,
+      children: [
+        {
+          path: ":id",
+          name: "users2-detail",
+          component: Users2Detail,
+        },
+        {
+          path: ":id/edit",
+          name: "users2-edit",
+          component: Users2Edit,
+        }
+      ]
+    }
   ],
 });
