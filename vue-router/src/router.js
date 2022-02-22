@@ -49,8 +49,16 @@ export default new Router({
           path: ":id/edit",
           name: "users2-edit",
           component: Users2Edit,
-        }
+        },
       ]
+    },
+    {
+      path: '/redirect-me',
+      redirect: { name: 'about' }
+    },
+    {
+      path: '/*',
+      redirect: { name: 'home' }
     }
   ],
 });
