@@ -28,7 +28,7 @@
 
 <script>
 import { EventBus } from '@/main.js'
-import { mapMutations } from 'vuex'
+import { mapMutations, mapActions } from 'vuex'
 
   export default {
     data() {
@@ -43,6 +43,8 @@ import { mapMutations } from 'vuex'
     methods: {
       // mutation을 commit 방식으로 사용하기 위해 주석 처리
       // ...mapMutations(['addUsers']),
+      ...mapActions(['addUsers2']),
+
       signUp() {
         let userObj = {
           userId: this.userId,
@@ -54,9 +56,17 @@ import { mapMutations } from 'vuex'
         // eventBus 방식
         // EventBus.$emit('signUp', userObj)
         
-        // mapMutations 방식
+        // ...mapMutations 방식
         // this.addUsers(userObj) // 이 userObj가 store mutations의 payload가 된다
-        this.$store.commit('addUsers', userObj)
+
+        // mutations의 commit 방식
+        // this.$store.commit('addUsers', userObj)
+
+        // ...mapActions 방식
+        this.addUsers2(userObj)
+
+        // action의 dispatch 방식
+        // this.$store.dispatch('addUsers2', userObj)
 
         // form 클리어
         this.clearForm()

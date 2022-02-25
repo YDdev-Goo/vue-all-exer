@@ -32,7 +32,13 @@ export default new Vuex.Store({
       state.allUsers.push(payload)
     }
   },
-  actions: {
-
+  actions: { // mutations의 값을 바꿀 때 사용
+    addUsers: context => {
+      context.commit('addUsers')
+    },
+    addUsers2: ({ commit }, payload) => {
+      // 위의 commit은 실제로는 { context, commit }
+      commit('addUsers', payload)
+    }
   }
 })
