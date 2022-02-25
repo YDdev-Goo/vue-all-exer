@@ -51,10 +51,14 @@ import { mapMutations } from 'vuex'
           address: this.address,
           src: this.src
         }
-        // eventBus를 mapMutations로 변경
+        // eventBus 방식
         // EventBus.$emit('signUp', userObj)
+        
+        // mapMutations 방식
         // this.addUsers(userObj) // 이 userObj가 store mutations의 payload가 된다
         this.$store.commit('addUsers', userObj)
+
+        // form 클리어
         this.clearForm()
       },
       clearForm() {

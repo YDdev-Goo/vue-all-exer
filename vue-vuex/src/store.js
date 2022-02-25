@@ -27,7 +27,7 @@ export default new Vuex.Store({
       return Math.round(getters.countOfSeoul / getters.allUsersCount * 100)
     }
   },
-  mutations: { // 변이, state 값을 변화 시킬 때 사용
+  mutations: { // 변이를 뜻하는 mutation은 store애서 state 값을 바꿀 때 사용
     addUsers: (state, payload) => {
       state.allUsers.push(payload)
     }

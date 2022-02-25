@@ -1,10 +1,8 @@
 <template>
   <div>
     <h1>All Users ({{ allUsers.length }}) </h1>
-    <p>store.getters 방식으로 사용하기</p>
-    <h1>Seoul Users: {{ $store.getters.countOfSeoul }} ({{ $store.getters.percentOfSeoul }}%) </h1>
-    <p>mapGetters 방식으로 사용하기</p>
-    <h1>서울 사용자1: {{ countOfSeoul }} ({{ percentOfSeoul }}%)</h1>
+    <h2>mapGetters 방식으로 사용하기</h2>
+    <h1>서울 사용자: {{ countOfSeoul }} ({{ percentOfSeoul }}%)</h1>
     <v-list two-line>
       <v-list-tile 
         v-for="(user, index) in $store.state.allUsers"
@@ -31,14 +29,10 @@ import { mapState, mapGetters } from 'vuex'
 
   export default {
     computed: {
-      // array 방식
+      // array 방식 mapGetters
       ...mapGetters(['countOfSeoul', 'percentOfSeoul']),
 
-      // 객체 방식
-      // ...mapGetters({
-      //   seouls: 'countOfSeoul',
-      //   percent: 'percentOfSeoul',
-      // })
+      // array 방식 mapState
       ...mapState(['allUsers'])
     },
     mounted() {
