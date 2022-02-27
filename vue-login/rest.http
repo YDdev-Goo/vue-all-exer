@@ -1,0 +1,19 @@
+### 로그인 성공 (body 작성 시 한칸 여백 필수)
+POST https://reqres.in/api/login
+Content-Type: application/json; charset=utf-8
+
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+
+### 로그인 실패
+POST https://reqres.in/api/login
+Content-Type: application/json; charset=utf-8
+
+{
+    "email": "peter@klaven"
+}
+
+###
+GET https://reqres.in/api/users?page=2
