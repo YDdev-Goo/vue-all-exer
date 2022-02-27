@@ -40,7 +40,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   date() {
@@ -54,19 +54,19 @@ export default {
   },
   methods: {
     ...mapActions(["login"]),
-    test() {
-      axios
-        .get("https://reqres.in/api/users?page=2")
-        .then(res => {
-          console.log('res :>> ', res);
-        })
-        .catch(err => {
-          console.log('err :>> ', err);
-        })
-        .then(() => {
-          //always executed
-        })
-    }
+    // test() {
+    //   axios
+    //     .get("https://reqres.in/api/users?page=2")
+    //     .then(res => {
+    //       console.log('res :>> ', res);
+    //     })
+    //     .catch(err => {
+    //       console.log('err :>> ', err);
+    //     })
+    //     .then(() => {
+    //       //always executed
+    //     })
+    // }
   }
 }
 </script>
