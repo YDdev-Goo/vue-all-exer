@@ -1,0 +1,15 @@
+### 로그인 성공 (body는 꼭 한 줄 공백을 줘야한다.)
+POST https://reqres.in/api/login
+content-type: application/json
+
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+
+### 로그인 실패
+POST https://reqres.in/api/login
+
+{
+    "email": "peter@klaven"
+}
