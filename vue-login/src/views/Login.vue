@@ -26,11 +26,11 @@
               depressed
               block
               large
-              @click="login(email, password)"
+              @click="login"
             >
               로그인
             </v-btn>
-            <v-btn @click="test"></v-btn>
+            <v-btn @click="test">test</v-btn>
           </div>
         </v-card>
       </v-flex>
@@ -40,7 +40,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
   date() {
@@ -54,19 +54,35 @@ export default {
   },
   methods: {
     ...mapActions(["login"]),
-    // test() {
-    //   axios
-    //     .get("https://reqres.in/api/users?page=2")
-    //     .then(res => {
-    //       console.log('res :>> ', res);
-    //     })
-    //     .catch(err => {
-    //       console.log('err :>> ', err);
-    //     })
-    //     .then(() => {
-    //       //always executed
-    //     })
-    // }
+    test() {
+      axios
+        .get("https://reqres.in/api/users?page=2")
+        .then(res => {
+          console.log('res :>> ', res);
+        })
+        .catch(err => {
+          console.log('err :>> ', err);
+        })
+        .then(() => {
+          //always executed
+        })
+    },
+    login() {
+      console.log('email123 :>> ', this.email);
+      console.log('password123 :>> ', this.password);
+      axios
+        .post("https://reqres.in/api/login", {
+          email: this.email,
+          password: this.password,
+        })
+        .then(res => {
+          console.log('res :>> ', res);
+        })
+        .catch(err => {
+          console.log('err :>> ', err);
+        })
+        .then()
+    }
   }
 }
 </script>
