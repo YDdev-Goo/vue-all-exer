@@ -30,7 +30,8 @@
             >
               로그인
             </v-btn>
-            <v-btn @click="test">test</v-btn>
+            <v-btn @click="test">test get</v-btn>
+            <v-btn @click="testPodt">test post</v-btn>
           </div>
         </v-card>
       </v-flex>
@@ -65,6 +66,21 @@ export default {
         })
         .then(() => {
           //always executed
+        })
+    },
+    testPodt() {
+      axios
+        .post("https://reqres.in/api/login", {
+          email: "eve.holt@reqres.in",
+          password: "cityslicka"
+        })
+        .then(res => {
+          console.log('res :>> ', res);
+        })
+        .catch(err => {
+          console.log('err :>> ', err);
+        })
+        .then(() => {
         })
     },
     login() {
