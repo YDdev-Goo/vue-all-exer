@@ -84,8 +84,8 @@ export default {
         })
     },
     login() {
-      console.log('email123 :>> ', this.email);
-      console.log('password123 :>> ', this.password);
+      console.log('email :>> ', this.email);
+      console.log('password :>> ', this.password);
       axios
         .post("https://reqres.in/api/login", {
           email: this.email,
@@ -93,6 +93,7 @@ export default {
         })
         .then(res => {
           console.log('res :>> ', res);
+          this.$router.push({name: 'home'})
         })
         .catch(err => {
           console.log('err :>> ', err);

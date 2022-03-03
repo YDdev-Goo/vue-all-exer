@@ -15,5 +15,8 @@ Content-Type: application/json; charset=utf-8
     "email": "peter@klaven"
 }
 
-###
+### list users
 GET https://reqres.in/api/users?page=2
+
+### user 1
+GET https://reqres.in/api/users/1

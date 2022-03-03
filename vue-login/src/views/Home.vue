@@ -13,8 +13,28 @@
         </blockquote>
       </v-layout>
     </v-slide-y-transition>
+    <router-link :to="{ name: 'user-detail', params: { user: user } }">사용자 정보 보기</router-link>
   </v-container>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      user: {
+        id: Number,
+        name: String,
+        phone: String,
+      },
+    }
+  },
+  created() {
+    this.user.id = 2,
+    this.user.name = "둘리",
+    this.user.phone = "010-1234-5678"
+  },
+}
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
